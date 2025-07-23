@@ -107,6 +107,21 @@ set -g @tokyo-night-tmux_active_terminal_icon 
 set -g @tokyo-night-tmux_window_tidy_icons 0
 ```
 
+### Session name prefix highlighting
+
+By default, the session name always uses a blue background. You can enable dynamic background color changes when the tmux prefix is active by setting a custom color:
+
+```bash
+# Change session name background to red when prefix is active
+set -g @tokyo-night-tmux_prefix_bg_color "#f7768e"
+
+# Or use any other color from the theme
+set -g @tokyo-night-tmux_prefix_bg_color "#73daca"  # green
+set -g @tokyo-night-tmux_prefix_bg_color "#e0af68"  # yellow
+```
+
+When this option is set, the session name background will change to the specified color when the tmux prefix is active, and remain blue when inactive. Leave this option unset to maintain the default behavior.
+
 ### Widgets
 
 For widgets add following lines in you `.tmux.conf`
