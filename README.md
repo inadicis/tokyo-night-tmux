@@ -88,7 +88,7 @@ tmux set @tokyo-night-tmux_pane_id_style hsquare
 tmux set @tokyo-night-tmux_zoom_id_style dsquare
 ```
 
-Alternatively, add these lines to your  `.tmux.conf`:
+Alternatively, add these lines to your `.tmux.conf`:
 
 ```bash
 set -g @tokyo-night-tmux_window_id_style digital
@@ -137,6 +137,7 @@ set -g @tokyo-night-tmux_show_music 1
 ```
 
 #### Netspeed widget
+
 ![Snap netspeed](snaps/netspeed.png)
 
 ```bash
@@ -202,6 +203,11 @@ so it's independent of terminal theme.
 
 #### TODO
 
+- documentation of zoom icon + don't change the default
+- make more clear when tmux prefix is on (whole bg color of session name red)
+- change colors for tmux update messages (white on light blue is not readable)
+- change icon of window depending on running command
+
 - Add configurations
   - remote fetch time
   - ~number styles~
@@ -210,7 +216,7 @@ so it's independent of terminal theme.
 
 ### Demo
 
-https://github.com/janoamaral/tokyo-night-tmux/assets/10008708/59ecd814-bc2b-47f2-82b1-ffdbfbc54fbf
+<https://github.com/janoamaral/tokyo-night-tmux/assets/10008708/59ecd814-bc2b-47f2-82b1-ffdbfbc54fbf>
 
 ### Snapshots
 
@@ -237,7 +243,6 @@ run against any raised PRs.
 [pre-commit]: https://pre-commit.com/
 [Noto Sans]: https://fonts.google.com/noto/specimen/Noto+Sans
 [Nerd Fonts]: https://www.nerdfonts.com/
-[coreutils]: https://www.gnu.org/software/coreutils/
 [bc]: https://www.gnu.org/software/bc/
 [jq]: https://jqlang.github.io/jq/
 [playerctl]: https://github.com/altdesktop/playerctl
