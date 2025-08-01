@@ -67,9 +67,11 @@ current_path="#($SCRIPTS_PATH/path-widget.sh #{pane_current_path})"
 battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 hostname="#($SCRIPTS_PATH/hostname-widget.sh)"
 
+prefix_active_color="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_prefix_active_color' | cut -d" " -f2 | tr -d '""')"
+
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[bblack]},bg=#{?client_prefix,${THEME[red]},${THEME[blue]}},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S$hostname "
+tmux set -g status-left "#[fg=${THEME[bblack]},bg=#{?client_prefix,${prefix_active_color:-${THEME[blue]}},${THEME[blue]}},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S$hostname "
 
 #+--- Windows ---+
 # Focus
