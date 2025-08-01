@@ -38,6 +38,7 @@ default_zoom_id_style="dsquare"
 default_terminal_icon=""
 default_active_terminal_icon=""
 default_zoom_icon="󰊓"
+default_prefix_background_color="${THEME[blue]}"
 
 window_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_window_id_style' | cut -d" " -f2)"
 pane_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_pane_id_style' | cut -d" " -f2)"
@@ -46,6 +47,7 @@ terminal_icon="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_terminal_icon' | cu
 active_terminal_icon="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_active_terminal_icon' | cut -d" " -f2)"
 window_tidy="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_window_tidy_icons' | cut -d" " -f2)"
 zoom_icon="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_zoom_icon' | cut -d" " -f2)"
+prefix_active_color="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_prefix_active_color' | cut -d" " -f2 | tr -d '""')"
 
 window_id_style="${window_id_style:-$default_window_id_style}"
 pane_id_style="${pane_id_style:-$default_pane_id_style}"
@@ -54,6 +56,7 @@ terminal_icon="${terminal_icon:-$default_terminal_icon}"
 active_terminal_icon="${active_terminal_icon:-$default_active_terminal_icon}"
 zoom_icon="${zoom_icon:-$default_zoom_icon}"
 window_space="${window_tidy:-0}"
+prefix_active_color="${prefix_active_color:-$default_prefix_background_color}"
 
 window_space=$([[ $window_tidy == "0" ]] && echo " " || echo "")
 
@@ -75,7 +78,7 @@ hostname="#($SCRIPTS_PATH/hostname-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[blue]},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S$hostname "
+tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[blue]},bold] #{?client_prefix,#[bg=${prefix_active_color}]󰠠 ,#[dim]󰤂 }#[bold,nodim]#S$hostname "
 
 #+--- Windows ---+
 # Focus
