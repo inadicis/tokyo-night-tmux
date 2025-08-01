@@ -78,6 +78,14 @@ set -g @tokyo-night-tmux_theme storm    # storm | day | default to 'night'
 set -g @tokyo-night-tmux_transparent 1  # 1 or 0
 ```
 
+### Prefix Active Color
+
+This option allows you to change the background color of the session name when the tmux prefix is active.
+
+```bash
+set -g @tokyo-night-tmux_prefix_active_color "#f7768e" # red
+```
+
 ### Number styles
 
 Run these commands in your terminal:
@@ -202,11 +210,6 @@ so it's independent of terminal theme.
 - Date and time.
 
 #### TODO
-
-- documentation of zoom icon + don't change the default
-- make more clear when tmux prefix is on (whole bg color of session name red)
-- change colors for tmux update messages (white on light blue is not readable)
-- change icon of window depending on running command
 
 - Add configurations
   - remote fetch time
